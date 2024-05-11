@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faUserDoctor, faKitMedical, faUsers, faHouseChimneyMedical } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./AdminDashbroad.scss";
 import { useEffect, useState } from "react";
@@ -17,6 +17,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { getAllHealthcare } from "../../service/healthcareService";
 import tempLogo from "../../asset/image/Healthcarepackage/tempLogo.webp";
+import { getTotalAdmin } from "../../service/clinicService";
 
 const AdminDashbroad = () => {
 
@@ -50,6 +51,8 @@ const AdminDashbroad = () => {
         Name: "All",
     })
 
+    const [totalAll, setTotalAll] = useState({})
+
     const fetchData = async () => {
 
         var id = null
@@ -70,6 +73,9 @@ const AdminDashbroad = () => {
         let res4 = await getAllHealthcare();
         res4.data.healthcarePackage.unshift({ ID: "all", Name: "All" })
         setHealthCare(res4.data.healthcarePackage)
+
+        let res5 = await getTotalAdmin();
+        setTotalAll(res5.data.result)
     }
 
     useEffect(() => {
@@ -96,6 +102,64 @@ const AdminDashbroad = () => {
             </div>
 
             <section className="main-content">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="widget bg-light padding-0">
+                            <div class="row row-table">
+                                <div class="col-xs-4 text-center padding-15 bg-primary" style={{ width: "50%" }}>
+                                    {/* <em class="icon-bag fa-3x"></em> */}
+                                    <FontAwesomeIcon style={{ width: "48px", height: "48px" }} icon={faUserDoctor} />
+                                </div>
+                                <div class="col-xs-8 padding-15 text-right" style={{ width: "50%" }}>
+                                    <h2 class="mv-0" style={{ textAlign: "center" }}>{totalAll?.totalDoctor}</h2>
+                                    <div class="margin-b-0 text-muted" style={{ textAlign: "center" }}>Doctor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="widget bg-light padding-0">
+                            <div class="row row-table">
+                                <div class="col-xs-4 text-center padding-15 bg-teal" style={{ width: "50%" }}>
+                                    <FontAwesomeIcon style={{ width: "48px", height: "48px" }} icon={faKitMedical} />
+                                </div>
+                                <div class="col-xs-8 padding-15 text-right" style={{ width: "50%" }}>
+                                    <h2 class="mv-0" style={{ textAlign: "center" }}>{totalAll?.totalHealthcarePackage}</h2>
+                                    <div class="margin-b-0 text-muted" style={{ textAlign: "center" }}>Healthcare</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="widget bg-light padding-0">
+                            <div class="row row-table">
+                                <div class="col-xs-4 text-center padding-15 bg-success" style={{ width: "50%" }}>
+                                    {/* <em class="icon-people fa-3x"></em> */}
+                                    <FontAwesomeIcon style={{ width: "48px", height: "48px" }} icon={faUsers} />
+                                </div>
+                                <div class="col-xs-8 padding-15 text-right" style={{ width: "50%" }}>
+                                    <h2 class="mv-0" style={{ textAlign: "center" }}>{totalAll?.totalPatient}</h2>
+                                    <div class="margin-b-0 text-muted" style={{ textAlign: "center" }}>Patient</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="widget bg-light padding-0">
+                            <div class="row row-table">
+                                <div class="col-xs-4 text-center padding-15 bg-indigo" style={{ width: "50%" }}>
+                                    <FontAwesomeIcon style={{ width: "48px", height: "48px" }} icon={faHouseChimneyMedical} />
+                                </div>
+                                <div class="col-xs-8 padding-15 text-right" style={{ width: "50%" }}>
+                                    <h2 class="mv-0" style={{ textAlign: "center" }}>{totalAll?.totalClinic}</h2>
+                                    <div class="margin-b-0 text-muted" style={{ textAlign: "center" }}>Clinic</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="row w-no-padding margin-b-30">
 
                     <div className="col-md-4">

@@ -48,6 +48,10 @@ const createClinicImage = async (obj) => {
     })
 }
 
+const getTotalAdmin = async () => {
+    return await axios.get("getTotalAdmin")
+}
+
 export {
     getAllClinics,
     getAllClinicsPagination,
@@ -57,5 +61,6 @@ export {
     deleteClinicByID,
     getClinicImage,
     deleteClinicImage,
-    createClinicImage
+    createClinicImage,
+    getTotalAdmin
 }
