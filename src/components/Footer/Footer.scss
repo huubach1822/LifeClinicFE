@@ -1,0 +1,49 @@
+.footer-container {
+    // position: absolute;
+    // bottom: 0;
+    width: 100%;
+
+    .footer-page {
+        background-color: #FFFFFF;
+        border-top: 1px solid #EFF4F6;
+        padding: 0 20%;
+        margin-bottom: 20px;
+        width: 100%;
+
+        img {
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+        }
+
+        .footer-title {
+            font-weight: bold;
+            font-family: Montserrat, sans-serif !important;
+            margin: 20px 0 10px 0;
+        }
+
+        .footer-underline {
+            cursor: pointer;
+        }
+
+        .footer-underline:hover {
+            text-decoration: underline;
+        }
+
+        .right-footer {
+            width: 100%;
+        }
+
+        .icon-footer {
+            height: 40px;
+            width: 115px;
+        }
+
+    }
+
+    .footer-end {
+        background-color: #00B5F1;
+        text-align: center;
+        color: white;
+    }
+}

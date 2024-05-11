@@ -1,0 +1,103 @@
+.pr-container {
+    min-height: 700px;
+
+    .pr-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto, sans-serif !important;
+        color: rgba(0, 0, 0, .85);
+
+        .pr-btn-add {
+            padding: 8px 12px;
+            cursor: pointer;
+            background: linear-gradient(46deg, #00b5f1 0, #00e0ff 100%);
+            border: 1px solid transparent;
+            --bs-btn-active-border-color: transparent;
+        }
+
+        .pr-btn-add:hover {
+            background: linear-gradient(46deg, #07aae0, #00c6e1);
+            box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+        }
+    }
+
+    .pr-content {
+        padding: 25px 25px 0px 25px;
+
+        .pr-card {
+            font-family: Roboto, sans-serif !important;
+            margin-bottom: 25px;
+            color: #004872;
+            font-size: 16px;
+            background-color: #FFFFFF;
+            box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+            padding: 0;
+            border-radius: 15px;
+            width: 99%;
+
+            .pr-info {
+                padding: 20px 25px;
+
+                .pr-name {
+                    color: rgb(0, 181, 241);
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                .pr-icon {
+                    display: inline-block;
+                    color: #C1C1C1;
+                    width: 30px;
+                }
+
+            }
+
+            .pr-btn {
+                background-color: #F5F5F5;
+                padding: 10px 20px;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                gap: 20px;
+
+                .pr-btn-detail {
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    background-color: #00b5f1;
+                    border: 1px solid transparent;
+                }
+
+                .pr-btn-detail:hover {
+                    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+                }
+
+                .pr-btn-delete {
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    background-color: #ff3b30;
+                    border: 1px solid transparent;
+                }
+
+                .pr-btn-delete:hover {
+                    background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+                }
+            }
+        }
+    }
+
+    .pr-no-data {
+
+        .pr-no-data-title {
+            color: rgb(177, 177, 177);
+            font-size: 21px;
+            font-family: Roboto, sans-serif !important;
+            margin-bottom: 32px;
+            font-weight: bold;
+
+        }
+
+        .pr-no-data-img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}

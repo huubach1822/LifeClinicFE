@@ -1,0 +1,78 @@
+.admin-doc-appointment {
+    .da-container {
+        min-height: 700px;
+
+        .as-title {
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Roboto, sans-serif !important;
+            color: rgba(0, 0, 0, .85);
+        }
+
+        .as-table {
+
+            tr {
+                th {
+                    background-color: #2e7df5;
+                    color: white;
+                }
+
+                .as-address {
+                    max-width: 200px;
+
+                    .as-icon {
+                        color: #003553;
+                    }
+                }
+
+                .as-name {
+                    max-width: 200px;
+                }
+
+                .pi-icon {
+                    background-color: #47BFFF;
+                    color: white;
+                }
+
+            }
+        }
+
+        th {
+            padding: 10px !important;
+        }
+    }
+
+    .css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input {
+        padding-bottom: 5px;
+    }
+
+    // .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    //     text-align: left;
+    //     position: absolute;
+    //     bottom: 0;
+    //     right: 0;
+    //     top: -5px;
+    //     left: 0;
+    //     margin: 0;
+    //     padding: 0 8px;
+    //     pointer-events: none;
+    //     border-radius: inherit;
+    //     border-style: solid;
+    //     border-width: 1px;
+    //     overflow: hidden;
+    //     min-width: 0%;
+    //     border-color: rgba(0, 0, 0, 0.23);
+    // }
+
+    .css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root {
+        padding-bottom: 5px !important;
+    }
+
+    .css-z3c6am-MuiFormControl-root-MuiTextField-root {
+        max-width: 225px;
+    }
+
+    .edit-input input:disabled {
+        background-color: white !important;
+    }
+}

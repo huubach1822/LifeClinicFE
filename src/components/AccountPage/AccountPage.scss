@@ -1,0 +1,65 @@
+.ap-container {
+    background-color: #FFFFFF;
+
+    .ap-s1 {
+        font-size: 16px;
+        font-weight: bold;
+
+        .ap-s1-hp {
+            color: #003553;
+            margin-left: 10%;
+            text-decoration: none;
+        }
+
+        .ap-s1-mf {
+            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .ap-s2 {
+        margin: 0 auto;
+
+        .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+            color: #00B5F1 !important;
+        }
+
+        .css-h0q0iv-MuiButtonBase-root-MuiTab-root.Mui-selected {
+            color: #00B5F1 !important;
+        }
+
+        .MuiButtonBase-root {
+            text-transform: none !important;
+            align-items: flex-start;
+            max-width: none !important;
+            width: 250px;
+            min-height: 48px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .css-10d9dml-MuiTabs-indicator {
+            background-color: #00B5F1 !important;
+        }
+
+        .css-19kzrtu {
+            padding-top: 0 !important;
+        }
+
+        .logout-btn {
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-weight: 500;
+            font-size: 0.875rem;
+            width: 250px;
+            padding: 12px 16px;
+            letter-spacing: 0.02857em;
+            min-height: 48px;
+            color: #e74c3c !important;
+            cursor: pointer;
+        }
+    }
+}

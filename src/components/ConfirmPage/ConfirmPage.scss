@@ -1,0 +1,121 @@
+.confirm-page {
+    background-color: #E8F2F7;
+
+    .con-container {
+        max-width: 1140px;
+        margin: auto;
+
+        .confirm-title {
+            padding: 12px 16px;
+            background: linear-gradient(36deg, #00b5f1, #00e0ff);
+            font-size: 17px;
+            font-weight: bold;
+            color: #fff;
+            font-family: Roboto, sans-serif !important;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .con-left-content {
+            background-color: #fff;
+            padding: 12px 16px;
+            font-family: Roboto, sans-serif !important;
+
+            .con-s1-icon {
+                display: inline-block;
+                width: 20px !important;
+                box-sizing: content-box;
+                text-align: center;
+                margin-right: 10px;
+
+                svg {
+                    color: #B1B1B1;
+                }
+            }
+
+            .address-detail {
+                margin-left: 30px;
+                color: #858585;
+                font-family: var(--bs-body-font-family);
+            }
+        }
+
+        .con-up-content {
+            font-family: Roboto, sans-serif !important;
+            padding: 2px 16px 0px;
+            background-color: #fff;
+
+            th,
+            tr,
+            td {
+                color: #003553;
+                --bs-table-bg-type: #fff !important;
+                padding: 20px 5px;
+                text-align: justify;
+            }
+
+            thead {
+                border-bottom: #EFEFEF 1px solid;
+            }
+
+            .trash-icon {
+                color: grey;
+                cursor: pointer;
+                text-align: center;
+                width: 35px;
+                border-radius: 4px;
+            }
+
+            .trash-icon:hover {
+                background-color: #e74c3c;
+                color: white;
+            }
+
+        }
+
+        .con-down-content {
+            font-family: Roboto, sans-serif !important;
+            padding: 16px;
+            background-color: #fff;
+            color: #003553;
+
+            .con-down-content-left,
+            .con-down-content-right {
+                width: 50%;
+            }
+
+            .con-icon {
+                display: inline-block;
+                flex: 0 0 30px;
+                color: #C1C1C1;
+            }
+        }
+
+        .btn-goback {
+            padding: 8px 12px;
+            cursor: pointer;
+            background-color: #E8F2F7;
+            color: #003553;
+            border: 1px solid transparent;
+            --bs-btn-active-border-color: transparent;
+        }
+
+        .btn-goback:hover {
+            background: rgba(0, 0, 0, .018);
+        }
+
+        .btn-add {
+            padding: 8px 18px;
+            cursor: pointer;
+            background: linear-gradient(46deg, #00b5f1 0, #00e0ff 100%);
+            border: 1px solid transparent;
+            --bs-btn-active-border-color: transparent;
+        }
+
+        .btn-add:hover {
+            background: linear-gradient(46deg, #07aae0, #00c6e1);
+            box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+        }
+
+    }
+}

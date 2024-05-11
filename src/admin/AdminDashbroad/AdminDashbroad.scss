@@ -1,0 +1,46 @@
+.admin-dashbroad {
+    .MuiChartsAxis-tick {
+        stroke: white !important;
+    }
+
+    .MuiChartsAxisHighlight-root {
+        stroke: white !important;
+    }
+
+    .MuiChartsAxis-tickLabel {
+        font-size: 9px !important;
+    }
+
+    .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+        border-color: white !important;
+    }
+
+    .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+        color: white !important;
+    }
+
+    .css-i4bv87-MuiSvgIcon-root {
+        color: white !important;
+    }
+
+    .MuiInputLabel-formControl {
+        color: white !important;
+    }
+
+    .MuiAutocomplete-input {
+        color: white !important;
+    }
+
+    .css-84nhb1-MuiAutocomplete-root {
+        width: 250px;
+    }
+
+    .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
+        width: 250px;
+        color: white !important;
+
+        legend {
+            display: none;
+        }
+    }
+}

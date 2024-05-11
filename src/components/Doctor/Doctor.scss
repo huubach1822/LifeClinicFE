@@ -1,0 +1,250 @@
+.doc-section-1 {
+    background-color: #FFFFFF;
+
+    .doc-s1-p1 {
+        font-size: 16px;
+        font-weight: bold;
+
+        .doc-s1-p1-hp {
+            color: #003553;
+            margin-left: 10%;
+            text-decoration: none;
+        }
+
+        .doc-s1-p1-doc {
+            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .doc-s1-p2 {
+        width: fit-content;
+        margin: 0 auto;
+
+        .doc-s1-p2-title {
+            color: #00b5f1;
+            font-weight: bolder;
+            font-size: 39px;
+            margin-bottom: 8px;
+            line-height: 48px;
+            font-family: Montserrat, sans-serif !important;
+        }
+
+        .doc-s1-p2-description {
+            color: #003553;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            font-family: Roboto, sans-serif !important;
+        }
+
+        .has-search {
+            width: 700px;
+            position: relative;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+
+            .form-control {
+                padding-left: 2.375rem;
+                height: 56px;
+                padding-left: 50px;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 10px;
+                color: black;
+            }
+
+            .form-control-feedback {
+                position: absolute;
+                z-index: 2;
+                display: block;
+                width: 3rem;
+                height: 3rem;
+                line-height: 2.375rem;
+                text-align: center;
+                pointer-events: none;
+                color: #aaa;
+                top: 15%;
+                left: 1%;
+            }
+
+            .placeholder-text {
+                font-size: 14px;
+                font-family: 'Times New Roman', serif;
+                color: #595C5F
+            }
+
+            fieldset {
+                border: none !important;
+            }
+
+            .search-line-icon {
+                background-color: #BDBEBD;
+                width: 1px;
+                margin: 12px 0;
+            }
+
+            .MuiInputBase-root {
+                font-size: 15px;
+                font-family: 'Times New Roman', serif;
+                color: black;
+            }
+
+        }
+    }
+}
+
+.doc-category {
+
+    background-color: #E8F2F7;
+    padding-top: 25px;
+
+
+    .doc-category-container {
+        width: 1180px !important;
+        margin: 0 auto;
+
+        .doc-category-title {
+            font-weight: bold;
+            color: #003553;
+        }
+
+    }
+
+
+}
+
+.doc-section-2 {
+    background-color: #E8F2F7;
+
+    .doc-s2-container {
+        max-width: 1180px !important;
+        min-height: 1150px;
+        margin: 0 auto;
+
+        .doc-s2-card {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            font-family: Roboto, sans-serif !important;
+
+            .doc-s2-img {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+            }
+
+            .doc-s2-name {
+                font-weight: bold;
+                font-size: 25px;
+                line-height: 29px;
+                margin-bottom: 12px;
+                width: 90%;
+                color: var(--primary-body-text, #003553);
+            }
+
+            .doc-s2-address {
+                font-size: 17px;
+                line-height: 21px;
+                color: #858585;
+                margin-bottom: 6px;
+            }
+
+            .doc-s2-price {
+                color: #ffb54a;
+                font-size: 20px;
+                line-height: 23px;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .doc-s2-button {
+                background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+                color: #fff;
+                height: 42px !important;
+                border: none;
+                padding: 10px 16px;
+                width: 167px;
+                transition: all .3s ease;
+                border-radius: 30px;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: normal;
+            }
+        }
+
+        .doc-s2-card:hover {
+            border-color: #00B5F1;
+        }
+
+        .doc-pagination {
+            color: white;
+            margin-top: auto;
+
+            .MuiPaginationItem-page {
+                background: #fff;
+                color: #00b5f1;
+                border: 1px solid transparent;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+
+            .MuiPaginationItem-page:hover {
+                border-color: #00b5f1;
+            }
+
+            .Mui-selected {
+                background: linear-gradient(98.96deg, #00b5f1 40.75%, #00e0ff 129.57%);
+                color: white;
+                border: 1px solid transparent;
+            }
+
+            .MuiPaginationItem-previousNext {
+                background: #fff;
+                color: #00b5f1;
+                border: 1px solid transparent;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+
+            .MuiPaginationItem-previousNext:hover {
+                border-color: #00b5f1;
+            }
+
+            .MuiPaginationItem-ellipsis {
+                color: rgba(0, 0, 0, .25);
+                border: 1px solid transparent;
+            }
+        }
+    }
+}
+
+.doc-section-3 {
+    background-color: #E8F2F7;
+    min-height: 500px;
+
+    .doc-s3-img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .doc-s3-warning {
+        font-family: Roboto, sans-serif !important;
+        color: #ffb54a;
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    font-size: 15px !important;
+    font-family: 'Times New Roman', serif !important;
+    color: black !important;
+}

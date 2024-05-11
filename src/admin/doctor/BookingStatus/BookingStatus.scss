@@ -1,0 +1,133 @@
+.doc-booking {
+
+    .border-booking {
+        border: 2px solid #00dc49;
+    }
+
+    // .react-datepicker__navigation--previous {
+    //     display: none;
+    // }
+
+    // .react-datepicker__navigation--next {
+    //     display: none;
+    // }
+
+    .as-table {
+
+        tr {
+            th {
+                background-color: #2e7df5;
+                color: white;
+            }
+
+            .as-address {
+                max-width: 200px;
+
+                .as-icon {
+                    color: #003553;
+                }
+            }
+
+            .as-name {
+                max-width: 200px;
+            }
+
+            .pi-icon {
+                background-color: #47BFFF;
+                color: white;
+            }
+
+        }
+
+        th {
+            padding: 10px !important;
+        }
+    }
+
+    .close {
+        position: absolute;
+        right: -10px;
+        cursor: pointer;
+        top: 4px;
+        width: 25px;
+        height: 25px;
+        opacity: 0.3;
+    }
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .close:before,
+    .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 25px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
+
+    .react-datepicker__header__dropdown--select {
+        margin: 5px 0px;
+    }
+
+    .react-datepicker__month-container:last-child {
+        .react-datepicker__current-month {
+            margin-bottom: 28px;
+        }
+    }
+
+    .react-datepicker__day--today {
+        background-color: #FFFFFF;
+        font-weight: normal;
+    }
+
+    .react-datepicker__day--selected {
+        background-color: #9bddff;
+    }
+
+    .availableDateAll {
+        border: 2px solid #212529;
+        border-radius: 5px;
+    }
+
+    .availableDatePending {
+        border: 2px solid #FF7800;
+        border-radius: 5px;
+    }
+
+    .availableDateApproved {
+        border: 2px solid #2e7df5;
+        border-radius: 5px;
+    }
+
+    .availableDateFinished {
+        border: 2px solid #2ECD6E;
+        border-radius: 5px;
+    }
+
+    .availableDateCancelled {
+        border: 2px solid #FC6161;
+        border-radius: 5px;
+    }
+
+    .react-datepicker__day--outside-month {
+        border: none;
+        visibility: hidden;
+    }
+
+    .react-datepicker__day--disabled {
+        border: none;
+        background-color: #FFFFFF;
+    }
+
+}

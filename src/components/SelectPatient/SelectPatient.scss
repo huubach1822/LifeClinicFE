@@ -1,0 +1,167 @@
+.select-patient-page {
+    background-color: #E8F2F7;
+
+    .sp-link {
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 10%;
+
+        .sp-hp {
+            color: #003553;
+            text-decoration: none;
+        }
+
+        .sp-title {
+            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .sp-container {
+
+        .sp-title {
+            font-family: Roboto, sans-serif !important;
+            font-size: 39px;
+            color: #00b5f1;
+            font-weight: bold;
+        }
+
+        .sp-content {
+
+            .sp-card {
+                font-family: Roboto, sans-serif !important;
+                margin-bottom: 25px;
+                color: #004872;
+                font-size: 16px;
+                // background-color: #FFFFFF;
+                box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+                padding: 0;
+                border-radius: 15px;
+                width: 500px;
+                cursor: pointer;
+                border: 2px solid transparent;
+
+                .sp-border {
+                    border-radius: 15px;
+                }
+
+                .sp-info {
+                    padding: 20px 25px;
+                    background-color: #FFFFFF;
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+
+                    .sp-name {
+                        color: rgb(0, 181, 241);
+                        font-weight: bold;
+                        text-transform: uppercase;
+                    }
+
+                    .sp-icon {
+                        display: inline-block;
+                        color: #C1C1C1;
+                        width: 30px;
+                    }
+
+                }
+
+                .sp-btn {
+                    background-color: #F5F5F5;
+                    padding: 10px 20px;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+
+                    .sp-btn-detail {
+                        padding: 8px 12px;
+                        cursor: pointer;
+                        background-color: #00b5f1;
+                        border: 1px solid transparent;
+                    }
+
+                    .sp-btn-detail:hover {
+                        background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+                    }
+
+                    .sp-btn-delete {
+                        padding: 8px 12px;
+                        cursor: pointer;
+                        background-color: #ff3b30;
+                        border: 1px solid transparent;
+                    }
+
+                    .sp-btn-delete:hover {
+                        background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+                    }
+
+                    .sp-btn-continue {
+                        padding: 8px 12px;
+                        cursor: pointer;
+                        background: linear-gradient(46deg, #00b5f1 0, #00e0ff 100%);
+                        border: 1px solid transparent;
+                        --bs-btn-active-border-color: transparent;
+                    }
+
+                    .sp-btn-continue:hover {
+                        background: linear-gradient(46deg, #07aae0, #00c6e1);
+                        box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+                    }
+                }
+            }
+
+            .sp-card:hover {
+                border: 2px solid #00b5f1;
+            }
+        }
+
+        .btn-group2 {
+            margin-top: 10px;
+            width: 500px;
+
+            .sp-btn-add {
+                padding: 8px 12px;
+                cursor: pointer;
+                background: linear-gradient(46deg, #00b5f1 0, #00e0ff 100%);
+                border: 1px solid transparent;
+                --bs-btn-active-border-color: transparent;
+            }
+
+            .sp-btn-add:hover {
+                background: linear-gradient(46deg, #07aae0, #00c6e1);
+                box-shadow: 4px 8px 30px 0 rgba(177, 196, 218, .35);
+            }
+
+            .sp-btn-goback {
+                padding: 8px 12px;
+                cursor: pointer;
+                background-color: #E8F2F7;
+                color: #003553;
+                border: 1px solid transparent;
+                --bs-btn-active-border-color: transparent;
+            }
+
+            .sp-btn-goback:hover {
+                background: rgba(0, 0, 0, .018);
+            }
+        }
+
+        .sp-no-data {
+
+            .sp-no-data-title {
+                color: rgb(177, 177, 177);
+                font-size: 21px;
+                font-family: Roboto, sans-serif !important;
+                margin-bottom: 32px;
+                font-weight: bold;
+
+            }
+
+            .sp-no-data-img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+}

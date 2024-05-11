@@ -1,0 +1,39 @@
+.bh-container {
+    min-height: 700px;
+
+    .as-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto, sans-serif !important;
+        color: rgba(0, 0, 0, .85);
+    }
+
+    .as-table {
+        padding: 25px 15px;
+
+        tr {
+            th {
+                background-color: #47BFFF;
+                color: white;
+            }
+
+            .as-address {
+                max-width: 200px;
+
+                .as-icon {
+                    color: #003553;
+                }
+            }
+
+            .as-name {
+                max-width: 200px;
+            }
+
+            .pi-icon {
+                background-color: #47BFFF;
+                color: white;
+            }
+
+        }
+    }
+}

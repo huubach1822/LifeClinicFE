@@ -1,0 +1,149 @@
+.blog-page-container {
+
+    background: #E8F2F7;
+
+    .blog-s1-p1 {
+        font-size: 16px;
+        font-weight: bold;
+        padding-top: 30px;
+
+        .doc-s1-p1-hp {
+            color: #003553;
+            margin-left: 9%;
+            text-decoration: none;
+        }
+
+        .doc-s1-p1-doc {
+            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .blog-page {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 30px 0;
+        width: fit-content;
+        min-height: 1000px;
+
+        .card {
+            width: 25rem;
+            height: auto;
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            max-height: 580px;
+        }
+
+        .card-img-holder {
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .card-img-holder img {
+            width: 100%;
+            height: auto;
+            max-height: 15rem;
+            object-fit: cover;
+            border-radius: 1.5rem;
+        }
+
+        .blog-title {
+            color: #22215B;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .description {
+            padding: 1rem 0;
+            color: #22215B80;
+            font-size: 1rem;
+            height: 100%;
+        }
+
+        .blog-time {
+            font-size: .8rem;
+            color: #22215B;
+        }
+
+        .options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem;
+        }
+
+        .options span {
+            font-weight: 600;
+            color: #22215B;
+        }
+
+        .btn {
+            font-size: 1rem;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            font-weight: 400;
+            background: #EEF7FE;
+            color: #22215B;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #47BFFF;
+            color: white;
+        }
+
+        .card:hover {
+            box-shadow: 0 1px 10px 5px rgba(0, 0, 0, .05);
+            border-color: #00b5f1;
+        }
+
+    }
+
+    .doc-pagination {
+        color: white;
+        margin-top: auto;
+
+        .MuiPaginationItem-page {
+            background: #fff;
+            color: #00b5f1;
+            border: 1px solid transparent;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .MuiPaginationItem-page:hover {
+            border-color: #00b5f1;
+        }
+
+        .Mui-selected {
+            background: linear-gradient(98.96deg, #00b5f1 40.75%, #00e0ff 129.57%);
+            color: white;
+            border: 1px solid transparent;
+        }
+
+        .MuiPaginationItem-previousNext {
+            background: #fff;
+            color: #00b5f1;
+            border: 1px solid transparent;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .MuiPaginationItem-previousNext:hover {
+            border-color: #00b5f1;
+        }
+
+        .MuiPaginationItem-ellipsis {
+            color: rgba(0, 0, 0, .25);
+            border: 1px solid transparent;
+        }
+    }
+
+}

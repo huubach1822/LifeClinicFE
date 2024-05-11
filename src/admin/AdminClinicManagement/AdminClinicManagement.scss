@@ -1,0 +1,36 @@
+.admin-clinic-management {
+
+    .as-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: Roboto, sans-serif !important;
+        color: rgba(0, 0, 0, .85);
+    }
+
+    .as-table {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        overflow: auto;
+        white-space: nowrap;
+        height: 400px;
+        position: relative;
+
+        thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tr {
+            th {
+                background-color: #2e7df5;
+                color: white;
+            }
+        }
+
+        th {
+            padding: 10px !important;
+        }
+    }
+
+}

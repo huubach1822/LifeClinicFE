@@ -1,0 +1,263 @@
+.booking-clinic-page {
+    background-color: #E8F2F7;
+
+    .bc-s0 {
+        font-size: 16px;
+        font-weight: bold;
+
+        .bc-s0-hp {
+            color: #003553;
+            margin-left: -30px;
+            text-decoration: none;
+        }
+
+        .bc-s0-title {
+            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .bc-container {
+        background-color: #E8F2F7;
+        max-width: 1178px;
+
+        .bc-s1 {
+
+            .bc-s1-title {
+                background-color: #00BFF4;
+                padding: 3%;
+                font-family: Roboto, sans-serif !important;
+                background: #1da1f2;
+                color: #fff;
+                padding: 12px 20px;
+                background: linear-gradient(36deg, #00b5f1, #00e0ff);
+                font-size: 18px;
+                font-weight: bold;
+                line-height: normal;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .bc-s1-info {
+                background-color: white;
+                padding: 12px 20px;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+
+                .icon {
+                    color: #B1B1B1;
+                    font-size: 14px;
+                }
+
+                img {
+                    width: 180px;
+                    height: 180px;
+                    margin: 0 auto;
+                }
+
+                .bc-s1-des {
+                    border-top: 1px solid #BFBFBF;
+                    text-align: justify;
+                    font-family: Roboto, sans-serif !important;
+                    color: rgba(0, 0, 0, .85);
+                    font-size: 15px;
+                }
+
+                .bc-s1-address {
+                    color: #858585;
+                    font-size: 15px;
+                }
+
+                .bc-s1-name {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #003553;
+                    font-family: Roboto, sans-serif !important;
+                }
+            }
+        }
+
+        .bc-s2-container {
+            padding: 0px !important;
+        }
+
+        .bc-s2 {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 0;
+            box-shadow: 0 4px 30px 0 rgba(116, 157, 206, .2);
+
+            .bc-s2-select {
+                font-family: Roboto, sans-serif !important;
+
+                option {
+                    font-size: 14px !important;
+                    background-color: white !important;
+                    color: rgba(0, 0, 0, .85) !important;
+                }
+
+                select {
+                    font-size: 14px !important;
+                    width: 180px;
+                    color: white !important;
+                    background: #00C5F6 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>") right .75rem center/8px 10px no-repeat !important;
+                }
+
+                select:focus {
+                    border-color: none;
+                    outline: 0;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+            }
+
+            .bc-s2-search-container {
+                width: auto;
+
+                .form-control {
+                    font-family: Roboto, sans-serif !important;
+                }
+
+                .form-control::placeholder {
+                    color: #BEBEBE;
+                }
+
+                .form-control:focus {
+                    border-color: #1da1f2 !important;
+                    box-shadow: 0 0 0 2px rgba(29, 161, 242, .2) !important;
+                }
+
+
+                .input-group-append {
+                    // border: none !important;
+                    border: var(--bs-border-width) solid var(--bs-border-color);
+                    border-top-right-radius: var(--bs-border-radius);
+                    border-bottom-right-radius: var(--bs-border-radius);
+
+
+                    button {
+                        border: 1px solid transparent;
+                        color: rgba(0, 0, 0, .45);
+                    }
+                }
+
+            }
+
+            .bc-s2-title {
+                background-color: #00BFF4;
+                padding: 3%;
+                font-family: Roboto, sans-serif !important;
+                background: #1da1f2;
+                color: #fff;
+                padding: 12px 16px;
+                background: linear-gradient(36deg, #00b5f1, #00e0ff);
+                font-size: 18px;
+                font-weight: bold;
+                line-height: normal;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                text-align: center;
+            }
+
+            .bc-doctors-container {
+                height: 450px;
+                overflow-x: hidden;
+                padding-top: 5px;
+                position: relative;
+
+                .bc-doctors {
+
+                    .bc-s2-card {
+                        background-color: #FFFFFF;
+                        border-radius: 15px;
+                        box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+                        cursor: pointer;
+                        border: 2px solid transparent;
+                        font-family: Roboto, sans-serif !important;
+                        height: 50%;
+
+                        .bc-s2-img {
+                            width: 90px;
+                            height: 90px;
+                        }
+
+                        .bc-s2-name {
+                            color: #ffb54a !important;
+                            font-weight: bold;
+                            font-family: Roboto, sans-serif !important;
+                            font-size: 1rem;
+                        }
+
+                        .bc-s2-doc-info {
+                            font-family: Roboto, sans-serif !important;
+                            font-size: 1rem;
+                            color: #003553;
+                            font-weight: normal !important;
+                        }
+
+                        .bc-s2-button {
+                            background: linear-gradient(83.63deg, #00b5f1 33.34%, #00e0ff 113.91%);
+                            color: #fff;
+                            height: 42px !important;
+                            border: none;
+                            padding: 10px 16px;
+                            width: 167px;
+                            transition: all .3s ease;
+                            border-radius: 30px;
+                            font-weight: bold;
+                            font-size: 16px;
+                            line-height: normal;
+
+                        }
+
+                        .bc-s2-icon {
+                            width: 30px;
+                            display: inline-block;
+                            text-align: center;
+                            margin-right: 5px;
+                        }
+                    }
+
+                    .bc-s2-card:hover {
+                        box-shadow: #BCE4FB 0px 1px 0px, #BCE4FB 0px 0px 8px;
+                        border: #BCE4FB 2px solid;
+                    }
+
+                }
+
+                .bc-nodata {
+                    position: absolute;
+                    top: 45%;
+                    left: 0;
+                    width: 100%;
+                    font-family: Roboto, sans-serif !important;
+                    text-align: center;
+                    color: #1da1f2;
+                    font-size: 1.2rem;
+                }
+            }
+
+            .bc-doctors-container::-webkit-scrollbar {
+                width: 6px;
+                display: block;
+                background-color: #f5f5f5;
+            }
+
+            .bc-doctors-container::-webkit-scrollbar-thumb {
+                background: #b2b2b2;
+                background-image: linear-gradient(0deg, #88d3ce 0, #2d9cfd);
+                border: 1px solid #b5b5b5;
+                border-radius: 5px;
+            }
+
+            .bc-doctors-container::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            }
+
+        }
+
+
+    }
+}

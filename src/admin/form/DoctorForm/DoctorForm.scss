@@ -1,0 +1,52 @@
+#doctor-form {
+
+    .css-z3c6am-MuiFormControl-root-MuiTextField-root {
+
+        .css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input {
+            height: 21px !important;
+        }
+
+        .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        .css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+            border-color: #86b7fe;
+            border-width: 1px;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    }
+
+    .btn-create {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #00b5f1;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-edit {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #ffb54a;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-cancel {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #ff3b30;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-create:hover,
+    .btn-edit:hover,
+    .btn-cancel:hover {
+        background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+    }
+
+
+}

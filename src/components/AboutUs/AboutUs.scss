@@ -1,0 +1,192 @@
+.about-us-page {
+
+    font-family: Roboto, sans-serif !important;
+
+    .au-section-1 {
+        height: 52.35602094vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 100%;
+        min-height: 500px;
+        width: 100%;
+        padding-top: 5%;
+
+        img {
+            width: 175px;
+        }
+
+        .au-s1-welcome {
+            color: #003553;
+            text-shadow: 2px 2px 4px rgba(83, 116, 180, .25) !important;
+            font-size: 39px;
+            font-weight: bold;
+        }
+
+        .au-s1-name {
+            color: #27aae1;
+            text-shadow: 2px 2px 4px rgba(127, 146, 210, .25);
+            font-size: 31px;
+            font-weight: bold;
+        }
+    }
+
+    .au-section-2 {
+        background-color: #E8F2F7;
+        padding: 5% 10% 1% 10%;
+
+        .au-s2-left {
+
+            margin-top: auto;
+            margin-bottom: 45px;
+            padding-left: 50px;
+
+            .au-s2-title {
+                font-size: 39px;
+                font-weight: bold;
+                line-height: 48px;
+                text-align: left;
+                color: #00b5f1;
+                margin-bottom: 8px;
+            }
+
+            .au-s2-description {
+                font-size: 16px;
+                line-height: 19px;
+                text-align: left;
+                margin-bottom: 40px;
+                color: #003553;
+            }
+
+            .au-s2-card-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px 20px;
+
+                .au-s2-card {
+                    height: 97px;
+                    padding: 8px 18px;
+                    border-radius: 16px;
+                    gap: 12px;
+                    background: #fff;
+                    text-align: center;
+
+                    .au-s2-card-number {
+                        font-size: 60px;
+                        font-family: Arial, sans-serif;
+                        color: #ffb54a;
+                        text-align: center;
+                        letter-spacing: 0;
+                        font-weight: bold;
+                    }
+
+                    .au-s2-card-text1 {
+                        color: #00b5f1;
+                        padding-bottom: 4px;
+                        font-size: 20px;
+                        text-align: left;
+                        font-style: normal;
+                        line-height: normal;
+                        font-weight: bold;
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+
+                    .au-s2-card-text2 {
+                        text-align: left;
+                        font-size: 20px;
+                        color: rgba(0, 0, 0, .85);
+                        font-weight: bold;
+
+                    }
+                }
+            }
+        }
+
+        .au-s2-right {
+            img {
+                width: 472px;
+                height: 463px;
+            }
+        }
+    }
+
+    .au-section-3 {
+        background-color: #E8F2F7;
+        padding: 1% 12%;
+
+        .au-s3-container {
+            padding: 0 55px 75px;
+            border-radius: 20px;
+            background: #fff;
+
+            .au-s3-img {
+                width: 28px;
+                height: 56px;
+            }
+
+            .au-s3-card {
+                padding-left: 63.5px;
+                padding-right: 63.5px;
+                width: 50%;
+
+                .au-s3-title {
+                    font-size: 32px;
+                    color: #00b5f1;
+                    text-align: center;
+                    letter-spacing: 0;
+                    font-weight: bold;
+                    margin-bottom: .5em;
+                }
+
+                .au-s3-content {
+                    font-size: 16px;
+                    color: #003553;
+                    letter-spacing: 0;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+    .au-section-4 {
+        background-color: #E8F2F7;
+        padding: 1% 12%;
+
+        .au-s4-container {
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 1px solid #fff;
+            box-shadow: 0 4px 20px hsla(220, 8%, 55%, .2);
+            height: 300px;
+            padding-right: 11%;
+
+            .au-s4-img-container {
+                background-color: #fff;
+                width: fit-content;
+                height: fit-content;
+                border-radius: 50%;
+                padding: 20px;
+            }
+
+
+            .au-s4-title {
+                color: #fff;
+                font-size: 30px;
+                line-height: 28px;
+                white-space: nowrap;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+
+            .au-s4-phone {
+                margin-top: 8px;
+                font-size: 49px;
+                color: #fff;
+                line-height: 57px;
+                font-weight: bold;
+            }
+
+        }
+    }
+
+}

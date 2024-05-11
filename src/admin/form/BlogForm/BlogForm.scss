@@ -1,0 +1,36 @@
+#blog-form {
+
+    .ql-container {
+        height: 200px !important;
+    }
+
+    .btn-create {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #00b5f1;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-edit {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #ffb54a;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-cancel {
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: #ff3b30;
+        border: 1px solid transparent;
+        min-width: 65px;
+    }
+
+    .btn-create:hover,
+    .btn-edit:hover,
+    .btn-cancel:hover {
+        background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+    }
+}

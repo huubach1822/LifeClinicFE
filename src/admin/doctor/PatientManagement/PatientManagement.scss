@@ -1,0 +1,35 @@
+.patient-management {
+
+    .as-table {
+
+        tr {
+            th {
+                background-color: #2e7df5;
+                color: white;
+            }
+
+            .as-address {
+                max-width: 200px;
+
+                .as-icon {
+                    color: #003553;
+                }
+            }
+
+            .as-name {
+                max-width: 200px;
+            }
+
+            .pi-icon {
+                background-color: #47BFFF;
+                color: white;
+            }
+
+        }
+
+        th {
+            padding: 10px !important;
+        }
+    }
+
+}
