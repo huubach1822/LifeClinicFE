@@ -45,7 +45,6 @@ import ClinicDetail from "./components/ClinicDetail/ClinicDetail";
 import BookPage from "./components/BookPage/BookPage";
 import BookingClinicHc from "./components/BookingClinic/BookingClinicHc";
 import AdminHealthcareManagement from "./admin/AdminHealthcareManagement/AdminHealthcareManagement";
-import FacebookMsg from "./components/FacebookMsg/FacebookMsg";
 
 function UserPage() {
   return (
@@ -53,7 +52,6 @@ function UserPage() {
       <Header />
       <Outlet />
       <Footer />
-      <FacebookMsg />
     </React.Fragment>
   );
 }
