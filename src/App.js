@@ -45,6 +45,7 @@ import ClinicDetail from "./components/ClinicDetail/ClinicDetail";
 import BookPage from "./components/BookPage/BookPage";
 import BookingClinicHc from "./components/BookingClinic/BookingClinicHc";
 import AdminHealthcareManagement from "./admin/AdminHealthcareManagement/AdminHealthcareManagement";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 function UserPage() {
   return (
@@ -52,6 +53,9 @@ function UserPage() {
       <Header />
       <Outlet />
       <Footer />
+      <TawkMessengerReact
+        propertyId="6641f8f99a809f19fb304751"
+        widgetId="default" />
     </React.Fragment>
   );
 }
