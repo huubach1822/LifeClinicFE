@@ -39,7 +39,6 @@ const LoginRegisterPage = () => {
         if (flag === 1) {
             if (validateEmpty(input, ["username", "password"])) {
                 let result = await dispatch(loginRedux(input));
-                console.log(result)
                 if (result.payload.code === 0) {
                     if (result.payload.account.ID_account_type === 1) {
                         navigate("/");

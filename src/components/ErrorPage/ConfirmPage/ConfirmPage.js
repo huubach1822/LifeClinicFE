@@ -154,7 +154,7 @@ const ConfirmPage = () => {
                 // "buyerPhone": "090xxxxxxx",
                 // "buyerAddress": "số nhà, đường, phường, tỉnh hoặc thành phố",
                 // "items": [],
-                "cancelUrl": "http://localhost:3000/error",
+                "cancelUrl": "http://localhost:3000",
                 "returnUrl": "http://localhost:3000/success",
                 // "expiredAt": 1696559798,
                 // "signature": "string"

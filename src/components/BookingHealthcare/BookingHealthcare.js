@@ -101,7 +101,9 @@ const BookingHealthcare = () => {
     const CustomDay = (props) => {
         let matchedStyles = {}
         if (healthcareDetail.healthcareSchedule.includes(props.day.format('MM-DD-YYYY'))) {
-            matchedStyles = { border: "1px solid #1976d2" }
+            if (props.day.isAfter(dayjs())) {
+                matchedStyles = { border: "1px solid #1976d2", backgroundColor: "#E0FFFF" }
+            }
         }
         return <PickersDay {...props} sx={{ ...matchedStyles }} />;
     };

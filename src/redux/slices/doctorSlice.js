@@ -6,6 +6,7 @@ export const doctorDetailRedux = createAsyncThunk(
     'doctorSlice/doctorDetailRedux',
     async (id, thunkAPI) => {
         const response = await getDoctorByAccount(id)
+        console.log(id)
         return response.data
     },
 )

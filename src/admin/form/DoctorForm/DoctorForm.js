@@ -92,6 +92,7 @@ const DoctorForm = (props) => {
                     } else {
                         toast.error(e.data.message);
                     }
+                    props.fetchData()
                 })
             } else {
                 let updateDoc = _.pick(doctor, ["ID", "Name", "DateOfBirth", "Phone", "Description", "Price", "Gender", "Email", "ID_speciality", "ID_degree", "ID_clinic"])
@@ -103,9 +104,9 @@ const DoctorForm = (props) => {
                     } else {
                         toast.error(e.data.message);
                     }
+                    props.fetchData()
                 })
             }
-            props.fetchData()
             closeForm();
         } else {
             toast.error("Please fill required fields")

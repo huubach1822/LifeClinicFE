@@ -29,6 +29,7 @@ const DoctorInfo = () => {
         setDegree(res2.data.degree);
         let res3 = await getAllClinics();
         setClinic(res3.data.clinics);
+        console.log(doctor)
     }
 
     useEffect(() => {

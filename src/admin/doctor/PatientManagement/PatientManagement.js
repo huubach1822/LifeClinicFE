@@ -25,7 +25,7 @@ const PatientManagement = () => {
     const [selectedPatient, setSelectedPatient] = useState(null);
 
     const fetchData = async () => {
-        let res = await getAllPatientForDoctor(account.ID, queryObject.page, queryObject.queryString);
+        let res = await getAllPatientForDoctor(account.doctors[0].ID, queryObject.page, queryObject.queryString);
         setPatient(res.data.data.result);
         setTotalPage(res.data.data.totalPages)
     }

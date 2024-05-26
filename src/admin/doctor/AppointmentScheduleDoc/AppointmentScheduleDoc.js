@@ -30,6 +30,7 @@ const AppointmentScheduleDoc = () => {
     const [value, setValue] = useState('1');
     const [schedule, setSchedule] = useState([]);
     const account = useSelector(state => state.accountSlice.account)
+    console.log(account)
     // pagination
     const [totalPage, setTotalPage] = useState(1);
     const [queryObject, setQueryObject] = useState({
@@ -45,8 +46,8 @@ const AppointmentScheduleDoc = () => {
     };
 
     let fetchData = async (obj) => {
-        let res = await getScheduleForDoctor(account.ID, _.isEmpty(obj.date) ? "" : obj.date.format('MM-DD-YYYY'), obj.page);
-        let res2 = await getDoctorDetail(account.ID);
+        let res = await getScheduleForDoctor(account.doctors[0].ID, _.isEmpty(obj.date) ? "" : obj.date.format('MM-DD-YYYY'), obj.page);
+        let res2 = await getDoctorDetail(account.doctors[0].ID);
         setDoctor(res2.data.doctorDetail);
         setSchedule(res.data.data.result);
         setTotalPage(res.data.data.totalPages)

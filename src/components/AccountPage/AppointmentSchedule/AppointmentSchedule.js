@@ -40,7 +40,6 @@ const AppointmentSchedule = () => {
             }
         });
         setBookingList(res.data.booking)
-        console.log(res.data.booking)
     }
 
     useEffect(() => {
@@ -82,8 +81,8 @@ const AppointmentSchedule = () => {
                             <tr>
                                 <th>ID</th>
                                 <th>Service</th>
-                                <th>Time schedule</th>
-                                <th>Price</th>
+                                <th>Date</th>
+                                <th>Payment</th>
                                 <th>Status</th>
                                 <th>Medical Facility</th>
                                 <th></th>
@@ -100,7 +99,7 @@ const AppointmentSchedule = () => {
                                             {
                                                 !_.isEmpty(item.booking_package_services) &&
                                                 <>
-                                                    <div>Optional: </div>
+                                                    <div>*Optional: </div>
                                                     {
                                                         item.booking_package_services.map((e, index) => {
                                                             return <div>{e.healthcare_service.Name}</div>
@@ -115,8 +114,10 @@ const AppointmentSchedule = () => {
                                             <div>{item.schedule.time_type.Value}</div>
                                         </td>
                                         <td>
-                                            <div>{item.Total_price}</div>
-                                            <div>VND</div>
+                                            <div>{item.Total_price} VND</div>
+                                            <div>{item?.payments[0]?.Payment_method}</div>
+                                            <div>{item?.payments[0]?.Status}</div>
+                                            <div>{item?.payments[0]?.Payment_date}</div>
                                         </td>
                                         <td>{item.Status}</td>
                                         <td>
@@ -125,7 +126,7 @@ const AppointmentSchedule = () => {
                                         </td>
                                         <td >
                                             <div className='d-flex flex-column gap-2'>
-                                                <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient Info</button>
+                                                <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient</button>
                                                 <button className="btn btn-danger" onClick={() => { deleteBtn(item.ID, item.schedule.ID) }}>Cancel</button>
                                             </div>
                                         </td>

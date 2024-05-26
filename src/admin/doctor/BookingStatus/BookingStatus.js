@@ -20,7 +20,7 @@ const BookingStatus = () => {
 
     const maxDate = dayjs().add(1, 'month').endOf('month');
     const [booking, setBooking] = useState([]);
-    const account = useSelector(state => state.accountSlice.account);
+    const account = useSelector(state => state.accountSlice.account)
     const [show, setShow] = useState(false);
     const [selectedPatient, setSelectedPatient] = useState(null);
     const [filterDate, setFilterDate] = useState(null);
@@ -67,20 +67,14 @@ const BookingStatus = () => {
                 time: data.time,
                 status: data.status
             })
-            // fetchData(account.ID, {
-            //     date: data.date,
-            //     time: data.time,
-            //     status: data.status,
-            //     page: 1
-            // }, true)
         } else {
-            fetchData(account.ID, queryObject);
+            fetchData(account.doctors[0].ID, queryObject);
         }
 
     }, [])
 
     useEffect(() => {
-        fetchData(account.ID, queryObject);
+        fetchData(account.doctors[0].ID, queryObject);
     }, [queryObject])
 
     const isAvailableDate = (date) => {
@@ -190,6 +184,7 @@ const BookingStatus = () => {
                                                     <th>ID</th>
                                                     <th>Booking Date</th>
                                                     <th>Appointment Infomation</th>
+                                                    <th>Payment</th>
                                                     <th>Patient Infomation</th>
                                                     <th style={{ textAlign: 'center' }}>Status</th>
                                                 </tr>
@@ -210,12 +205,17 @@ const BookingStatus = () => {
                                                                 <div>Time: {item?.schedule.time_type.Value}</div>
                                                             </td>
                                                             <td>
+                                                                <div>{item?.payments[0]?.Payment_method}</div>
+                                                                <div>{item?.payments[0]?.Status}</div>
+                                                                <div>{item?.payments[0]?.Payment_date}</div>
+                                                            </td>
+                                                            <td>
                                                                 <div>Name: {item?.patient.Name}</div>
                                                                 <div>Phone: {item?.patient.Phone}</div>
                                                                 <button className="btn btn-primary mt-1" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient Info</button>
                                                             </td>
                                                             <td>
-                                                                <EditStatus item={item} queryObject={queryObject} docID={account?.ID} fetchData={fetchData} />
+                                                                <EditStatus item={item} queryObject={queryObject} docID={account.doctors[0]?.ID} fetchData={fetchData} />
                                                             </td>
                                                         </tr>
                                                     )

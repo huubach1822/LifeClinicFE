@@ -12,7 +12,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import { getAllDoctors } from "../../../service/doctorService";
 import Box from '@mui/material/Box';
 
-const AnAppointment = () => {
+const AnAppointment = (props) => {
 
     const [doctorDetail, setDoctorDetail] = useState()
     const [timeType, setTimeType] = useState([]);
@@ -31,6 +31,7 @@ const AnAppointment = () => {
         setDoctorDetail(res.data.doctorDetail);
         let res2 = await getAllTimeType();
         setTimeType(res2.data.timeType);
+        props.fetchData(props.queryObject)
     }
 
     useEffect(() => {

@@ -30,14 +30,14 @@ const DashboardDoc = () => {
 
     const [key, setKey] = useState(6000)
     const [year, setYear] = useState(dayjs())
-    const account = useSelector(state => state.accountSlice.account);
+    const account = useSelector(state => state.accountSlice.account)
     const [stats, setStats] = useState({})
     const [revenue, setRevenue] = useState({})
 
     const fetchData = async () => {
-        const result = await statsBooking(account.ID, year.format('YYYY'));
+        const result = await statsBooking(account.doctors[0].ID, year.format('YYYY'));
         setStats(result.data.result)
-        let res2 = await statsRevenue(account.ID, year.format('YYYY'));
+        let res2 = await statsRevenue(account.doctors[0].ID, year.format('YYYY'));
         setRevenue(res2.data.result)
     }
 

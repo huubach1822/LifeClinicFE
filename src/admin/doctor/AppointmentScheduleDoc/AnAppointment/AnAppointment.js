@@ -13,7 +13,7 @@ import DatePicker from "react-datepicker";
 const AnAppointment = (props) => {
 
     const [doctorDetail, setDoctorDetail] = useState()
-    const account = useSelector(state => state.accountSlice.account);
+    const account = useSelector(state => state.accountSlice.account)
     const [timeType, setTimeType] = useState([]);
     const [timeSchedule, setTimeSchedule] = useState([]);
     const [maxPatient, setMaxPatient] = useState(5);
@@ -23,7 +23,7 @@ const AnAppointment = (props) => {
     const maxDate = dayjs().add(1, 'month').endOf('month');
 
     const fetchData = async () => {
-        let res = await getDoctorDetail(account.ID);
+        let res = await getDoctorDetail(account.doctors[0].ID);
         setDoctorDetail(res.data.doctorDetail);
         let res2 = await getAllTimeType();
         setTimeType(res2.data.timeType);
@@ -116,7 +116,7 @@ const AnAppointment = (props) => {
                         <div className='title-font fw-bold mt-3'>Choose Time</div>
                         <div className="time-btn-container mt-2">
                             {timeType?.map((item, index) => {
-                                // return <button disabled={timeSchedule?.some((e) => e.time_type.ID === item.ID)} key={index} type="button" className={"btn " + (timeSchedule?.some((e) => e.time_type.ID === item.ID) ? "btn-secondary" : "btn-primary")}>{item.Value}</button>
+
                                 return (
                                     <div key={index} className='checkBoxBtn'>
                                         <div className={"cat action " + (timeSchedule?.some((e) => e.time_type.ID === item.ID) ? "disable-btn" : "")}>

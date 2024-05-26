@@ -46,6 +46,8 @@ import BookPage from "./components/BookPage/BookPage";
 import BookingClinicHc from "./components/BookingClinic/BookingClinicHc";
 import AdminHealthcareManagement from "./admin/AdminHealthcareManagement/AdminHealthcareManagement";
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
+import SuccessPage from "./components/SuccessPage/SuccessPage";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 function UserPage() {
   return (
@@ -53,9 +55,9 @@ function UserPage() {
       <Header />
       <Outlet />
       <Footer />
-      <TawkMessengerReact
+      {/* <TawkMessengerReact
         propertyId="6641f8f99a809f19fb304751"
-        widgetId="default" />
+        widgetId="1htor94hv" /> */}
     </React.Fragment>
   );
 }
@@ -108,6 +110,9 @@ function App() {
             <Route path="/blogDetail/:id" element={<Blog />} />
             <Route path="/clinicDetail/:id" element={<ClinicDetail />} />
             <Route path="/bookPage/:name/:id" element={<BookPage />} />
+
+            <Route path="/success" element={<SuccessPage />} />
+            <Route path="/error" element={<ErrorPage />} />
           </Route>
 
           {account?.ID_account_type === 2 && (

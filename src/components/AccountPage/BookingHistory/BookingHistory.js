@@ -54,8 +54,8 @@ const BookingHistory = () => {
                             <tr>
                                 <th>ID</th>
                                 <th>Service</th>
-                                <th>Time schedule</th>
-                                <th>Price</th>
+                                <th>Date</th>
+                                <th>Payment</th>
                                 <th>Status</th>
                                 <th>Medical Facility</th>
                                 <th></th>
@@ -72,7 +72,7 @@ const BookingHistory = () => {
                                             {
                                                 !_.isEmpty(item.booking_package_services) &&
                                                 <>
-                                                    <div>Optional: </div>
+                                                    <div>*Optional: </div>
                                                     {
                                                         item.booking_package_services.map((e, index) => {
                                                             return <div>{e.healthcare_service.Name}</div>
@@ -87,8 +87,10 @@ const BookingHistory = () => {
                                             <div>{item.schedule.time_type.Value}</div>
                                         </td>
                                         <td>
-                                            <div>{item.Total_price}</div>
-                                            <div>VND</div>
+                                            <div>{item.Total_price} VND</div>
+                                            <div>{item?.payments[0]?.Payment_method}</div>
+                                            <div>{item?.payments[0]?.Status}</div>
+                                            <div>{item?.payments[0]?.Payment_date}</div>
                                         </td>
                                         <td>{item.Status}</td>
                                         <td>
@@ -96,7 +98,7 @@ const BookingHistory = () => {
                                             <div className='as-address'><FontAwesomeIcon icon={faLocationDot} className='as-icon me-1' />{item.clinic.Address}</div>
                                         </td>
                                         <td>
-                                            <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient Info</button>
+                                            <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient</button>
                                         </td>
                                     </tr>
                                 )

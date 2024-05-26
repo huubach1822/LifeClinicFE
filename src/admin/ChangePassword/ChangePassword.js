@@ -25,11 +25,15 @@ const ChangePassword = () => {
     })
     const submitBtn = async () => {
 
-        if (validateEmpty(passwordInput, ["oldPassword", "newPassword", "reEnterPassword"]) && validateLength(passwordInput.oldPassword, 6, "Old password") && validateLength(passwordInput.newPassword, 6, "New password")) {
+        if (validateEmpty(passwordInput, ["oldPassword", "newPassword", "reEnterPassword"])) {
             if (passwordInput.newPassword === passwordInput.reEnterPassword) {
                 let result = await dispatch(changePwRedux(passwordInput))
                 if (result.payload.code === 0) {
-                    navigate("/admin")
+                    if (account.ID_account_type === 2) {
+                        navigate("/admin/dashbroadDoc")
+                    } else if (account.ID_account_type === 3) {
+                        navigate("/admin/adminDashbroad")
+                    }
                     toast.success(result.payload.message)
                 } else {
                     toast.error(result.payload.message)

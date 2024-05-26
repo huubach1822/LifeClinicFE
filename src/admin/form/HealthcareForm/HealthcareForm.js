@@ -22,7 +22,7 @@ import {
     GridRowEditStopReasons,
 } from '@mui/x-data-grid';
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 const HealthcareForm = (props) => {
 
@@ -33,7 +33,7 @@ const HealthcareForm = (props) => {
         const { setRows, setRowModesModel } = props;
 
         const handleClick = () => {
-            const id = uuidv4();
+            const id = Date.now(); //
             setRows((oldRows) => [...oldRows, { id, Name: '', Price: '', IsRequired: true, isNew: true }]);
             setRowModesModel((oldModel) => ({
                 ...oldModel,

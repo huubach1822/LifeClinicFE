@@ -348,6 +348,7 @@ const AdminBookingStatus = () => {
                                                     <th>ID</th>
                                                     <th>Booking Date</th>
                                                     <th>Appointment Infomation</th>
+                                                    <th>Payment</th>
                                                     <th>Patient Infomation</th>
                                                     <th style={{ textAlign: 'center' }}>Status</th>
                                                 </tr>
@@ -385,6 +386,11 @@ const AdminBookingStatus = () => {
                                                                 <div>ID Appointment: {item?.schedule.ID}</div>
                                                                 <div>Date: {item?.schedule.Date}</div>
                                                                 <div>Time: {item?.schedule.time_type.Value}</div>
+                                                            </td>
+                                                            <td>
+                                                                <div>{item?.payments[0]?.Payment_method}</div>
+                                                                <div>{item?.payments[0]?.Status}</div>
+                                                                <div>{item?.payments[0]?.Payment_date}</div>
                                                             </td>
                                                             <td>
                                                                 <div>Name: {item?.patient.Name}</div>
