@@ -129,6 +129,12 @@ const MedicalFacility = () => {
         })
     }
     useEffect(() => {
+
+        if (!_.isEmpty(data?.searchString)) {
+            data.searchString = "";
+            return
+        }
+
         let timerId = fetchData(queryObject)
         window.scrollTo(0, 0);
         return () => clearTimeout(timerId);

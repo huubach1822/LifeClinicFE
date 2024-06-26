@@ -100,7 +100,9 @@ const AppointmentScheduleDoc = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 deleteSchedule(id).then((result) => {
-                    fetchData(queryObject);
+                    fetchData(queryObject).then(() => {
+                        setKey(key + 1);
+                    });
                     if (result.data.code === 0) {
                         toast.success(result.data.message)
                     } else {
@@ -113,16 +115,18 @@ const AppointmentScheduleDoc = () => {
         });
     }
 
+    const [key, setKey] = useState(50);
+
     return (
         <div className="doc-appointment">
 
             <div className="row page-header">
                 <div className="col-lg-6 align-self-center ">
-                    <h2>Appointment Schedule</h2>
+                    <h2>Schedule Availability</h2>
                     <div className="mt-2">
                         <Link to="/admin" className="link-hp me-2">Home</Link>
                         <FontAwesomeIcon icon={faAngleRight} />
-                        <span className="link-current ms-2">Appointment Schedule</span>
+                        <span className="link-current ms-2">Schedule Availability</span>
                     </div>
 
                 </div>
@@ -134,12 +138,12 @@ const AppointmentScheduleDoc = () => {
                     <div className="col-md-12">
                         <div className="card">
                             <div className="card-body">
-                                <Box sx={{ width: '100%', typography: 'body1' }}>
+                                <Box sx={{ width: '100%', typography: 'body1' }} key={key}>
                                     <TabContext value={value} >
                                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                             <TabList onChange={handleChange} aria-label="lab API tabs example" variant="fullWidth">
-                                                <Tab label="Create an appointment" value="1" />
-                                                <Tab label="Create multiple appointments " value="2" />
+                                                <Tab label="Set Single Available Date" value="1" />
+                                                <Tab label="Set Multiple Available Dates" value="2" />
                                             </TabList>
                                         </Box>
                                         <TabPanel value="1">
@@ -157,7 +161,7 @@ const AppointmentScheduleDoc = () => {
                                 <div className="da-container p-2 d-flex flex-column justify-content-between">
                                     <div>
                                         <div className="d-flex justify-content-between align-items-center mb-3">
-                                            <div className="as-title">Appointment List</div>
+                                            <div className="as-title">Available Date</div>
                                             <div className="d-flex gap-4 align-items-center">
                                                 <div>Select Date</div>
                                                 <DatePicker
@@ -219,7 +223,7 @@ const AppointmentScheduleDoc = () => {
                                                                 </td>
                                                                 <td>
                                                                     <div className="d-flex flex-column gap-3">
-                                                                        <button onClick={() => deleteBtn(item.ID)} disabled={item.Current_number > 0} className="btn btn-danger">Delete</button>
+                                                                        <button onClick={() => deleteBtn(item.ID)} disabled={item.Current_number > 0 || !_.isEmpty(item.bookings)} className="btn btn-danger">Delete</button>
                                                                     </div>
                                                                 </td>
                                                             </tr>

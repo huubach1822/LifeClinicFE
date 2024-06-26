@@ -20,8 +20,8 @@ const updateBooking = async (obj) => {
     return await axios.put("updateBooking", obj);
 }
 
-const statsBooking = async (id, year, flag = "doctor") => {
-    return await axios.get(`statsBooking/${id}/${year}/${flag}`);
+const statsBooking = async (id, flag = "doctor") => {
+    return await axios.get(`statsBooking/${id}/${flag}`);
 }
 
 const statsRevenue = async (id, year, flag = "doctor") => {
@@ -32,6 +32,21 @@ const getBookingForAdmin = async (id, status, date, time, page, flag) => {
     return await axios.get(`getBookingForAdmin/${id}/${status}/${date}/${time}/${page}/${flag}`);
 }
 
+const getMedicalResultByID = async (id) => {
+    return await axios.get(`getMedicalResultByID/${id}`);
+}
+
+const updateMedicalResult = async (obj) => {
+    return await axios.put("updateMedicalResult", obj);
+}
+
+const createMedicalResult = async (obj) => {
+    return await axios.post("createMedicalResult", obj);
+}
+
+const deleteMedicalResult = async (id) => {
+    return await axios.delete(`deleteMedicalResult/${id}`);
+}
 
 export {
     createBooking,
@@ -41,5 +56,9 @@ export {
     updateBooking,
     statsBooking,
     statsRevenue,
-    getBookingForAdmin
+    getBookingForAdmin,
+    getMedicalResultByID,
+    updateMedicalResult,
+    createMedicalResult,
+    deleteMedicalResult
 }

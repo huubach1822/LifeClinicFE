@@ -29,7 +29,7 @@ const ErrorPage = () => {
                 booking.Status = "Cancelled";
                 booking.PaymentInfo = {
                     ID: orderCode,
-                    Payment_method: "Bank transfer",
+                    Payment_method: "Banking",
                     Status: "Cancel",
                     Payment_date: now.format('MM-DD-YYYY'),
                 }

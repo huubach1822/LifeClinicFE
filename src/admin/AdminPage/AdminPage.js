@@ -78,9 +78,9 @@ const AdminPage = () => {
                                 </form>
                             </div> */}
                             <ul className="list-inline top-right-nav">
-                                <li className="dropdown icons-dropdown d-none-m">
+                                {/* <li className="dropdown icons-dropdown d-none-m">
                                     <a data-toggle="dropdown" href="#"><i className="fa fa-envelope"></i>
-                                        {/* <div className="notify setpos"> <span className="heartbit"></span> <span className="point"></span> </div> */}
+                                        <div className="notify setpos"> <span className="heartbit"></span> <span className="point"></span> </div>
                                     </a>
 
                                     <ul className="dropdown-menu top-dropdown lg-dropdown notification-dropdown">
@@ -146,7 +146,7 @@ const AdminPage = () => {
                                 </li>
                                 <li className="dropdown icons-dropdown d-none-m">
                                     <a data-toggle="dropdown" href="#"><i className="fa fa-bell"></i>
-                                        {/* <div className="notify setpos"> <span className="heartbit"></span> <span className="point"></span> </div> */}
+                                        <div className="notify setpos"> <span className="heartbit"></span> <span className="point"></span> </div>
                                     </a>
                                     <ul className="dropdown-menu top-dropdown lg-dropdown notification-dropdown">
                                         <li>
@@ -199,7 +199,7 @@ const AdminPage = () => {
                                 </li>
                                 <li className="dropdown">
                                     <a className="right-sidebar-toggle d-none-m" ><i className="fa fa-align-right"></i></a>
-                                </li>
+                                </li> */}
                                 <li className="dropdown avtar-dropdown">
                                     <a data-toggle="dropdown" href="#">
                                         <img alt="" className="rounded-circle me-2"
@@ -344,11 +344,11 @@ const AdminPage = () => {
                                     <li className="nav-heading"><span>APPOINTMENT SCHEDULE</span></li>
 
                                     <li style={{ cursor: 'pointer' }} className={"nav-item" + (pathname === '/admin/appointmentSchedule' ? ' active' : '')} onClick={() => navigate('/admin/appointmentSchedule')}>
-                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faCalendarDays} className="me-3" /> <span className="toggle-none">Appointment Schedule</span></a>
+                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faCalendarDays} className="me-3" /> <span className="toggle-none">Schedule Availability</span></a>
                                     </li>
 
                                     <li style={{ cursor: 'pointer' }} className={"nav-item" + (pathname === '/admin/bookingStatus' ? ' active' : '')} onClick={() => navigate('/admin/bookingStatus')}>
-                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faStethoscope} className="me-3" /> <span className="toggle-none">Booking Status</span></a>
+                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faStethoscope} className="me-3" /> <span className="toggle-none">Booking Management</span></a>
                                     </li>
 
                                     <li style={{ cursor: 'pointer' }} className={"nav-item" + (pathname === '/admin/patientManagement' ? ' active' : '')} onClick={() => navigate('/admin/patientManagement')}>
@@ -369,7 +369,7 @@ const AdminPage = () => {
                                     </li>
 
                                     <li style={{ cursor: 'pointer' }} className={"nav-item" + (pathname === '/admin/adminBookingStatus' ? ' active' : '')} onClick={() => navigate('/admin/adminBookingStatus')}>
-                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faStethoscope} className="me-3" /> <span className="toggle-none">Booking Status</span></a>
+                                        <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faStethoscope} className="me-3" /> <span className="toggle-none">Booking Management</span></a>
                                     </li>
                                     <li style={{ cursor: 'pointer' }} className={"nav-item" + (pathname === '/admin/AdminPatientManagement' ? ' active' : '')} onClick={() => navigate('/admin/AdminPatientManagement')}>
                                         <a className="nav-link" aria-expanded="false"><FontAwesomeIcon icon={faHospitalUser} className="me-3" /> <span className="toggle-none">Patient Management</span></a>

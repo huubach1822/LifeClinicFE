@@ -112,7 +112,9 @@ const AdminHealthcareSchedule = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 deleteSchedule(id).then((result) => {
-                    fetchData(queryObject);
+                    fetchData(queryObject).then(() => {
+                        setKey(key + 1);
+                    });
                     if (result.data.code === 0) {
                         toast.success(result.data.message)
                     } else {
@@ -125,16 +127,18 @@ const AdminHealthcareSchedule = () => {
         });
     }
 
+    const [key, setKey] = useState(250);
+
     return (
         <div className="admin-doc-appointment">
 
             <div className="row page-header">
                 <div className="col-lg-6 align-self-center ">
-                    <h2>Appointment Schedule</h2>
+                    <h2>Healthcare Schedule</h2>
                     <div className="mt-2">
                         <Link to="/admin" className="link-hp me-2">Home</Link>
                         <FontAwesomeIcon icon={faAngleRight} />
-                        <span className="link-current ms-2">Appointment Schedule</span>
+                        <span className="link-current ms-2">Healthcare Schedule</span>
                     </div>
 
                 </div>
@@ -146,12 +150,12 @@ const AdminHealthcareSchedule = () => {
                     <div className="col-md-12">
                         <div className="card">
                             <div className="card-body">
-                                <Box sx={{ width: '100%', typography: 'body1' }}>
+                                <Box sx={{ width: '100%', typography: 'body1' }} key={key}>
                                     <TabContext value={value} >
                                         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                             <TabList onChange={handleChange} aria-label="lab API tabs example" variant="fullWidth">
-                                                <Tab label="Create an appointment" value="1" />
-                                                <Tab label="Create multiple appointments " value="2" />
+                                                <Tab label="Set Single Available Date" value="1" />
+                                                <Tab label="Set Multiple Available Dates" value="2" />
                                             </TabList>
                                         </Box>
                                         <TabPanel value="1">
@@ -169,7 +173,7 @@ const AdminHealthcareSchedule = () => {
                                 <div className="da-container p-2 d-flex flex-column justify-content-between">
                                     <div>
                                         <div className="d-flex justify-content-between align-items-center mb-3">
-                                            <div className="as-title">Appointment List</div>
+                                            <div className="as-title">Available Date</div>
                                             <div className="d-flex gap-4 align-items-center">
                                                 <Autocomplete
                                                     id="country-select-demo"

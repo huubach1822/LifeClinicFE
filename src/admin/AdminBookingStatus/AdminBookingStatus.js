@@ -20,6 +20,7 @@ import Box from '@mui/material/Box';
 import { getAllDoctors } from "../../service/doctorService";
 import { getAllHealthcare } from "../../service/healthcareService";
 import tempLogo from "../../asset/image/Healthcarepackage/tempLogo.webp";
+import ResultForm from "../form/ResultForm/ResultForm";
 
 const AdminBookingStatus = () => {
 
@@ -50,6 +51,8 @@ const AdminBookingStatus = () => {
         flag: "doctor"
     });
     const [doctors, setDoctors] = useState([])
+    const [show2, setShow2] = useState(false);
+    const [selectedID2, setSelectedID2] = useState(null);
 
     const fetchData = async () => {
         let res = null
@@ -138,14 +141,14 @@ const AdminBookingStatus = () => {
 
     return (
         <div className="admin-doc-booking">
-
+            <ResultForm selectedID={selectedID2} setSelectedID={setSelectedID2} show={show2} setShow={setShow2}></ResultForm>
             <div className="row page-header">
                 <div className="col-lg-6 align-self-center ">
-                    <h2>Booking Status</h2>
+                    <h2>Booking Management</h2>
                     <div className="mt-2">
                         <Link to="/admin" className="link-hp me-2">Home</Link>
                         <FontAwesomeIcon icon={faAngleRight} />
-                        <span className="link-current ms-2">Booking Status</span>
+                        <span className="link-current ms-2">Booking Management</span>
                     </div>
                 </div>
             </div>
@@ -388,6 +391,7 @@ const AdminBookingStatus = () => {
                                                                 <div>Time: {item?.schedule.time_type.Value}</div>
                                                             </td>
                                                             <td>
+                                                                <div>{item?.Total_price} VND</div>
                                                                 <div>{item?.payments[0]?.Payment_method}</div>
                                                                 <div>{item?.payments[0]?.Status}</div>
                                                                 <div>{item?.payments[0]?.Payment_date}</div>
@@ -395,10 +399,18 @@ const AdminBookingStatus = () => {
                                                             <td>
                                                                 <div>Name: {item?.patient.Name}</div>
                                                                 <div>Phone: {item?.patient.Phone}</div>
+                                                                <div>Gender: {item?.patient.Gender}</div>
                                                                 <button className="btn btn-primary mt-1" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient Info</button>
                                                             </td>
                                                             <td>
                                                                 <EditStatus item={item} fetchData={fetchData} />
+                                                                {
+                                                                    item.Status === "Finished" && (
+                                                                        <div className="d-flex justify-content-center mt-3" style={{ width: '100%' }}>
+                                                                            <button className="btn btn-info" onClick={() => { setShow2(true); setSelectedID2(item.ID) }}>Medical Result</button>
+                                                                        </div>
+                                                                    )
+                                                                }
                                                             </td>
                                                         </tr>
                                                     )

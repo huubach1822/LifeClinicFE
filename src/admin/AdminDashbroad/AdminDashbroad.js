@@ -70,8 +70,8 @@ const AdminDashbroad = () => {
     useEffect(() => {
 
         const getData = async () => {
-            const result = await statsBooking("all", year.format('YYYY'), "doctor");
-            const result2 = await statsBooking("all", year.format('YYYY'), "healthcare");
+            const result = await statsBooking("all", "doctor");
+            const result2 = await statsBooking("all", "healthcare");
 
             setStats({
                 pending: result.data.result.pending + result2.data.result.pending,

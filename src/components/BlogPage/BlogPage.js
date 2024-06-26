@@ -33,6 +33,7 @@ const BlogPage = () => {
                 setBlogs(res.data.data.result);
                 setTotalPage(res.data.data.totalPages);
             })
+            window.scrollTo(0, 0);
         }
     };
 

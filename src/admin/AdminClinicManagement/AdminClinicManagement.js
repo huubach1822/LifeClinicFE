@@ -230,7 +230,9 @@ const AdminClinicManagement = () => {
                                                                     {item?.Name}
                                                                 </td>
                                                                 <td>
-                                                                    {item?.Address}
+                                                                    <div style={{ display: 'inline-block', maxWidth: '450px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                                                        {item?.Address}
+                                                                    </div>
                                                                 </td>
                                                                 <td>
                                                                     {item?.city.Name}
@@ -239,7 +241,7 @@ const AdminClinicManagement = () => {
                                                                     {item?.IsDeleted ? "Yes" : "No"}
                                                                 </td>
                                                                 <td>
-                                                                    <div className="d-flex gap-3 align-items-center justify-content-center">
+                                                                    <div className="d-flex gap-3 align-items-center justify-content-center flex-column">
                                                                         <button onClick={() => detailBtn(item.ID)} type="button" className="btn btn-primary pr-btn-detail">Detail</button>
                                                                         <button disabled={item.IsDeleted} onClick={() => deleteBtn(item.ID)} type="button" className="btn btn-danger pr-btn-delete">Delete</button>
                                                                     </div>

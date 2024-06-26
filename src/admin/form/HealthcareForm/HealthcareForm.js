@@ -49,7 +49,7 @@ const HealthcareForm = (props) => {
                         Service List
                     </div>
                     <Button color="primary" startIcon={<AddIcon />} onClick={handleClick} disabled={!editMode && !_.isEmpty(tempSelectedPackage)}>
-                        Add record
+                        Add service
                     </Button>
                 </div>
             </GridToolbarContainer>
@@ -64,7 +64,7 @@ const HealthcareForm = (props) => {
     const basePrice = (arr) => {
         if (_.isEmpty(arr)) return 0
         let sum = 0
-        for (let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr?.length; i++) {
             if ((arr[i].IsRequired === 1 || arr[i].IsRequired === true) && arr[i].Price !== null && arr[i].Price !== "" && arr[i].status !== 'delete') {
                 sum += arr[i].Price
             }
@@ -75,7 +75,7 @@ const HealthcareForm = (props) => {
     const maxPrice = (arr) => {
         if (_.isEmpty(arr)) return 0
         let sum = 0
-        for (let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr?.length; i++) {
             if (arr[i].Price !== null && arr[i].Price !== "" && arr[i].status !== 'delete') {
                 sum += arr[i].Price
             }
@@ -84,7 +84,7 @@ const HealthcareForm = (props) => {
     }
 
     const validateService = (arr) => {
-        for (let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr?.length; i++) {
             if (_.isEmpty(arr[i].Name) || arr[i].Price === "" || arr[i].Price === null) {
                 return false
             }
@@ -93,7 +93,7 @@ const HealthcareForm = (props) => {
     }
 
     const handleCreate = () => {
-        if (validateEmpty(healthcare, ["Name", "Description"]) && dataService.length > 0 && validateService(dataService)) {
+        if (validateEmpty(healthcare, ["Name", "Description"]) && dataService?.length > 0 && validateService(dataService)) {
             healthcare.Price = basePrice(dataService)
             healthcare.MaxPrice = maxPrice(dataService)
             healthcare.dataService = dataService
@@ -113,7 +113,7 @@ const HealthcareForm = (props) => {
     }
 
     const handleUpdate = () => {
-        if (validateEmpty(healthcare, ["Name", "Description"]) && dataService.length > 0 && validateService(dataService)) {
+        if (validateEmpty(healthcare, ["Name", "Description"]) && dataService?.length > 0 && validateService(dataService)) {
             healthcare.Price = basePrice(dataService)
             healthcare.MaxPrice = maxPrice(dataService)
             healthcare.dataService = dataService
@@ -153,13 +153,14 @@ const HealthcareForm = (props) => {
 
     useEffect(() => {
         if (!_.isEmpty(props.selectedPackage)) {
+            console.log(props.selectedPackage)
             setHealthcare({ ...props.selectedPackage })
             let temp = props.selectedPackage.healthcare_services
-            for (let i = 0; i < temp.length; i++) {
+            for (let i = 0; i < temp?.length; i++) {
                 temp[i].id = temp[i].ID
                 temp[i].status = ''
             }
-            temp.sort(function (a, b) {
+            temp?.sort(function (a, b) {
                 return b.IsRequired - a.IsRequired;
             });
             setRows([...temp])
@@ -232,7 +233,7 @@ const HealthcareForm = (props) => {
         }
 
         let tempDataService = dataService.map((item) => (item.id === newRow.id ? tempRow : item));
-        tempDataService.sort(function (a, b) {
+        tempDataService?.sort(function (a, b) {
             return b.IsRequired - a.IsRequired;
         });
 

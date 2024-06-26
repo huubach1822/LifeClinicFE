@@ -6,7 +6,12 @@ import { useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import PatientForm from '../../PatientForm/PatientForm';
-import _ from 'lodash';
+import _, { set } from 'lodash';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import { getMedicalResultByID } from '../../../service/bookingService';
+import ReactQuill from 'react-quill';
 
 const BookingHistory = () => {
 
@@ -14,6 +19,11 @@ const BookingHistory = () => {
     const account = useSelector(state => state.accountSlice.account)
     const [show, setShow] = useState(false)
     const [selectedPatient, setSelectedPatient] = useState(null)
+
+    const [result, setResult] = useState({})
+    const [content, setContent] = useState("")
+    const [selectedID, setSelectedID] = useState(null)
+    const [show2, setShow2] = useState(false)
 
     // call api
     const fetchData = async () => {
@@ -43,6 +53,31 @@ const BookingHistory = () => {
         fetchData()
         // eslint-disable-next-line
     }, [])
+
+    const closeForm = () => {
+        setShow2(false);
+        setSelectedID(null)
+        setResult({})
+        setContent("")
+    }
+
+    useEffect(() => {
+
+        const getData = async () => {
+            let res = await getMedicalResultByID(selectedID);
+
+            if (!_.isEmpty(res.data.result)) {
+                setResult({
+                    ID: res.data.result.ID,
+                    Date: res.data.result.Date,
+                    ID_booking: res.data.result.ID_booking
+                });
+                setContent(res.data.result.Result)
+            }
+        }
+        getData()
+        // eslint-disable-next-line
+    }, [selectedID])
 
     return (
         <>
@@ -98,7 +133,13 @@ const BookingHistory = () => {
                                             <div className='as-address'><FontAwesomeIcon icon={faLocationDot} className='as-icon me-1' />{item.clinic.Address}</div>
                                         </td>
                                         <td>
-                                            <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient</button>
+                                            <div className='d-flex justify-content-center align-items-center flex-column gap-3'>
+                                                <button className="btn btn-primary" onClick={() => { setSelectedPatient(item.patient); setShow(true) }}>Patient</button>
+                                                {
+                                                    item.Status === "Finished" &&
+                                                    <button style={{ color: "white" }} className="btn btn-info" onClick={() => { setSelectedID(item.ID); setShow2(true) }}>Result</button>
+                                                }
+                                            </div>
                                         </td>
                                     </tr>
                                 )
@@ -108,6 +149,37 @@ const BookingHistory = () => {
                 </div>
             </div>
             <PatientForm viewOnly={true} show={show} setShow={setShow} fetchData={fetchData} patient={selectedPatient} setPatient={setSelectedPatient} />
+
+            <Modal show={show2} onHide={() => closeForm()} centered id="result-patient" size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>Medical Examination Result</Modal.Title>
+                    <div style={{ margin: "0px auto", fontSize: "20px" }}>
+                        {
+                            !_.isEmpty(result) &&
+                            <div>Updated: {result?.Date} </div>
+                        }
+                    </div>
+                </Modal.Header>
+                <Modal.Body>
+                    <Form className="row">
+                        {/* <div className='py-3 px-4' >
+                            <div className='content-result p-3' style={{ height: "450px", border: "1px solid #A9A9A9", borderRadius: "5px", overflowX: "auto" }} dangerouslySetInnerHTML={{ __html: content }}>
+
+                            </div>
+                        </div> */}
+                        <ReactQuill
+                            readOnly={true}
+                            modules={{
+                                toolbar: [
+
+                                ],
+                            }}
+                            theme="snow" value={content} onChange={(e) => setContent(e)}
+                        />;
+                    </Form>
+                </Modal.Body>
+            </Modal>
+
         </>
     )
 }

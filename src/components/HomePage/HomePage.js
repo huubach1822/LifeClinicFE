@@ -21,7 +21,7 @@ import userPerMonth from '../../asset/image/HomePage/userPerMonth.webp'
 import userPerDay from '../../asset/image/HomePage/userPerDay.webp'
 import banner2 from '../../asset/image/HomePage/banner-2.png'
 import Slider from "react-slick";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getAllClinics } from '../../service/clinicService'
 import { searchAll } from '../../service/clinicService'
 import _ from 'lodash'
@@ -78,25 +78,55 @@ const HomePage = () => {
     }, []);
 
 
+    const [divVisible, setDivVisible] = useState(false);
+    const inputRef = useRef(null);
+    const divRef = useRef(null);
+
+    const handleInputChange = (event) => {
+        const value = event.target.value;
+        setSearchString(value);
+        if (value.length > 0) {
+            setDivVisible(true);
+        } else {
+            setDivVisible(false);
+        }
+    };
+
+    const handleMouseDownOutside = (event) => {
+        if (
+            inputRef.current && !inputRef.current.contains(event.target) &&
+            divRef.current && !divRef.current.contains(event.target)
+        ) {
+            setDivVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleMouseDownOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleMouseDownOutside);
+        };
+    }, []);
+
+    const handleInputFocus = () => {
+        if (searchString.length > 0) {
+            setDivVisible(true);
+        }
+    };
+
+
     return (
         <div className="home-page-container">
             <div className="section-1 d-flex flex-column" style={{ backgroundImage: `url("${banner1}")` }}>
                 <div className="section-1-part-1 d-flex flex-column align-items-center">
                     <div className='s-p-tilte-1 mb-2'>Technology platform</div>
                     <div className='s-p-tilte-2 mb-3'>Connecting People with Facilities - Healthcare Services</div>
-                    <div className="form-group has-search" onFocus={() => setFocus(true)}
-                        onBlur={() => {
-                            if (ignoreBlur) {
-                                ignoreBlur = false; // Reset the flag
-                                return;
-                            }
-                            setFocus(false)
-                        }}>
+                    <div className="form-group has-search">
                         <span className="form-control-feedback"><FontAwesomeIcon icon={faSearch} /></span>
-                        <input value={searchString} onChange={(e) => setSearchString(e.target.value)} type="text" className="form-control" placeholder="" />
+                        <input ref={inputRef} value={searchString} onChange={handleInputChange} onFocus={handleInputFocus} type="text" className="form-control" placeholder="" />
                         {
-                            !_.isEmpty(searchString) && focus &&
-                            <div className='search-all search-all-drop' onMouseDown={() => { ignoreBlur = true }}>
+                            divVisible &&
+                            <div ref={divRef} className='search-all search-all-drop'>
                                 <div className="search-all-container">
                                     <div className='search-all-title d-flex justify-content-between'>
                                         <div>
@@ -114,7 +144,7 @@ const HomePage = () => {
                                             searchResult?.clinics?.map((item) => {
                                                 return (
                                                     <div
-                                                        onClick={() => navigate(`/bookingClinic/${item.ID}`)}
+                                                        onClick={() => navigate(`/clinicDetail/${item.ID}`)}
                                                         style={{ borderBottom: "2px solid #DBE1E7" }} className='result-container d-flex px-3 py-2 align-items-center gap-3'>
                                                         <img style={{ width: "40px", height: "40px", borderRadius: "50%" }} src={process.env.REACT_APP_BACKEND_URL + item?.Logo}></img>
                                                         <div>
@@ -204,7 +234,7 @@ const HomePage = () => {
                             <div className='mt-2'>Book a doctor's appointment</div>
                         </div>
                     </div>
-                    <div className='section-1-card' onClick={() => navigate('/clinic')}>
+                    <div className='section-1-card' onClick={() => navigate('/medicalFacility')}>
                         <div className='s-1-card-container d-flex flex-column align-items-center'>
                             <img alt="" src={hospitalIcon}></img>
                             <div className='mt-2'>Schedule a hospital visit</div>
@@ -243,13 +273,13 @@ const HomePage = () => {
                             <img alt="" className='s-2-logo mb-2' src={Logo2}></img>
                             <div className='s-2-underlogo'>Quick Appointment</div>
                         </div>
-                        <div className='section-2-info ms-5'>
+                        <div className='section-2-info ms-5' style={{ textAlign: "justify", textJustify: "inter-word" }}>
                             <span className='fw-bold'>LifeClinic</span> provides an online appointment booking service for medical examination and healthcare at leading hospitals in Vietnam, such as University of Medicine and Pharmacy Hospital, Cho Ray Hospital and Nhi Dong Hospital, helping users to choose services and doctors according to their needs.
                         </div>
                     </div>
                     <div className="d-flex mt-5 justify-content-between">
                         <div className="section-2-card">
-                            <img alt="" src={ImgCard1} ></img>
+                            <img alt="" src={ImgCard3} ></img>
                             <div className="s-2-title">Your time is invaluable</div>
                             <div className="s-2-description">Patients actively choose appointment information (appointment date and time)</div>
                             <button type="button" className="btn btn-primary" onClick={() => navigate('/doctor')}>Book now <FontAwesomeIcon icon={faArrowRight} className="ms-2" /></button>
@@ -261,9 +291,9 @@ const HomePage = () => {
                             <button type="button" className="btn btn-primary" onClick={() => navigate('/medicalFacility')}>Book now <FontAwesomeIcon icon={faArrowRight} className="ms-2" /></button>
                         </div>
                         <div className="section-2-card">
-                            <img alt="" src={ImgCard3} ></img>
+                            <img alt="" src={ImgCard1} ></img>
                             <div className="s-2-title">Building health for everyone</div>
-                            <div className="s-2-description">Professional Home Healthcare Services, Meeting Common Home Healthcare Needs</div>
+                            <div className="s-2-description">Inclusive healthcare package: preventive care, diagnostics, treatments, affordability.</div>
                             <button type="button" className="btn btn-primary" onClick={() => navigate('/healthcareService')}>Book now <FontAwesomeIcon icon={faArrowRight} className="ms-2" /></button>
                         </div>
                     </div>
@@ -311,7 +341,7 @@ const HomePage = () => {
             </div>
             <div className="section-4 pt-5">
                 <div className="s-4-title-1">Well-known hospital</div>
-                <div className="s-4-title-2">Book an appointment with over 70 hospitals nationwide</div>
+                <div className="s-4-title-2">Book an appointment with over 50 hospitals nationwide</div>
                 <div className="slider-container py-4">
                     <Slider {...settings}>
                         {clinics?.map((item, index) => {

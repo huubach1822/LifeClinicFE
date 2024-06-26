@@ -15,7 +15,7 @@ const EditMaxPatient = (props) => {
     }, [props.item])
 
     const handleSave = async () => {
-        if (number <= props.item.Current_number) {
+        if (number < props.item.Current_number) {
             toast.error("Maximum patient cannot be less than current number of patient")
         } else {
             let res = await updateMaxPatient({ Max_number: number, ID: props.item.ID })

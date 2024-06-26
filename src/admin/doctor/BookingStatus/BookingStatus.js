@@ -15,6 +15,7 @@ import { getAllTimeType } from "../../../service/scheduleService";
 import { useLocation } from "react-router-dom";
 import _ from "lodash";
 import Pagination from '@mui/material/Pagination';
+import ResultForm from "../../form/ResultForm/ResultForm";
 
 const BookingStatus = () => {
 
@@ -35,6 +36,8 @@ const BookingStatus = () => {
         time: "all",
         status: "all"
     });
+    const [show2, setShow2] = useState(false);
+    const [selectedID2, setSelectedID2] = useState(null);
 
     const fetchData = async (id, queryObject) => {
         let res = null
@@ -92,14 +95,14 @@ const BookingStatus = () => {
 
     return (
         <div className="doc-booking">
-
+            <ResultForm selectedID={selectedID2} setSelectedID={setSelectedID2} show={show2} setShow={setShow2}></ResultForm>
             <div className="row page-header">
                 <div className="col-lg-6 align-self-center ">
-                    <h2>Booking Status</h2>
+                    <h2>Booking Management</h2>
                     <div className="mt-2">
                         <Link to="/admin" className="link-hp me-2">Home</Link>
                         <FontAwesomeIcon icon={faAngleRight} />
-                        <span className="link-current ms-2">Booking Status</span>
+                        <span className="link-current ms-2">Booking Management</span>
                     </div>
                 </div>
             </div>
@@ -205,6 +208,7 @@ const BookingStatus = () => {
                                                                 <div>Time: {item?.schedule.time_type.Value}</div>
                                                             </td>
                                                             <td>
+                                                                <div>{item?.Total_price} VND</div>
                                                                 <div>{item?.payments[0]?.Payment_method}</div>
                                                                 <div>{item?.payments[0]?.Status}</div>
                                                                 <div>{item?.payments[0]?.Payment_date}</div>
@@ -216,6 +220,13 @@ const BookingStatus = () => {
                                                             </td>
                                                             <td>
                                                                 <EditStatus item={item} queryObject={queryObject} docID={account.doctors[0]?.ID} fetchData={fetchData} />
+                                                                {
+                                                                    item.Status === "Finished" && (
+                                                                        <div className="d-flex justify-content-center mt-3" style={{ width: '100%' }}>
+                                                                            <button className="btn btn-info" onClick={() => { setShow2(true); setSelectedID2(item.ID) }}>Medical Result</button>
+                                                                        </div>
+                                                                    )
+                                                                }
                                                             </td>
                                                         </tr>
                                                     )

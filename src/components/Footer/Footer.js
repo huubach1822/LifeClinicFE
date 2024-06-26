@@ -25,15 +25,15 @@ const Footer = () => {
                             <div className="footer-title">Service</div>
                             <div className="footer-underline" onClick={() => navigate("/doctor")}>Book doctor's appointment</div>
                             <div className="footer-underline" onClick={() => navigate("/medicalFacility")}>Schedule a hospital visit</div>
-                            <div className="footer-underline" onClick={() => navigate("/healthcareService")}>Get health check-up</div>
-                            <div className="footer-underline" onClick={() => navigate("/blog")}>Read our blog</div>
+                            <div className="footer-underline" onClick={() => navigate("/healthcareService")}>Get healthcare package</div>
                         </div>
                         <div>
                             <div className="footer-title">Support</div>
                             <div className="footer-underline" onClick={() => navigate("/aboutUs")}>About LifeClinic</div>
+                            <div className="footer-underline" onClick={() => navigate("/blog")}>Read our blog</div>
                             {/* <div className="footer-underline">Questions and Answers</div> */}
-                            <div className="footer-underline">Contact Us</div>
-                            <div className="footer-underline">Privacy Policy</div>
+                            {/* <div className="footer-underline">Contact Us</div>
+                            <div className="footer-underline">Privacy Policy</div> */}
                         </div>
                     </div>
                     <div className="icon-content d-flex justify-content-center align-items-center gap-5 flex-fill">
